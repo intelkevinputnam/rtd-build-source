@@ -24,3 +24,11 @@ deploy:
   on:
     branch: rtd-theme
   local_dir: source/_build/html/
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: source/_build/html/**/*
+  skip_cleanup: true
+  on:
+    tags: true
