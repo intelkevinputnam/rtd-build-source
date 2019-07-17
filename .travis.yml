@@ -25,11 +25,13 @@ deploy:
     branch: rtd-theme
   local_dir: source/_build/html/
 
+before_deploy:
+  - tar -zcvf clearlinux-docs.tar.gz source/_build/html/
+
 deploy:
   provider: releases
   skip_cleanup: true
   api_key: $GITHUB_TOKEN
-  file_glob: true
-  file: source/_build/html/**/*
+  file: clearlinux-docs.tar.gz
   on:
     tags: true
