@@ -14,24 +14,22 @@ script:
   - make htmlall
   #- make linkcheck
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  keep-history: true
-  repo: intelkevinputnam/rtd-build-target
-  target-branch: master
-  on:
-    branch: rtd-theme
-  local_dir: source/_build/html/
-
 before_deploy:
-  - tar -zcvf clearlinux-docs.tar.gz source/_build/html/
+  - tar -zcvf clearlinux-docs.tar.gz -C source/_build/html/ .
 
 deploy:
-  provider: releases
-  skip_cleanup: true
-  api_key: $GITHUB_TOKEN
-  file: clearlinux-docs.tar.gz
-  on:
-    tags: true
+ - provider: pages
+   skip_cleanup: true
+   github_token: $GITHUB_TOKEN
+   keep-history: true
+   repo: intelkevinputnam/rtd-build-target
+   target-branch: master
+   on:
+     branch: rtd-theme
+   local_dir: source/_build/html/
+ - provider: releases
+   skip_cleanup: true
+   api_key: $GITHUB_TOKEN
+   file: clearlinux-docs.tar.gz
+   on:
+     tags: true
