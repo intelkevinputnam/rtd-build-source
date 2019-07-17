@@ -27,8 +27,8 @@ deploy:
 
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key: $GITHUB_TOKEN
   file: source/_build/html/**/*
-  skip_cleanup: true
   on:
     tags: true
