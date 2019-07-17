@@ -1,6 +1,8 @@
 Documentation build instructions
 ################################
 
+LTSv1
+
 .. todo add comment re not using standards here.
 
 `Clear Linux\* OS documentation`_ is written using `reStructuredText`_ and
