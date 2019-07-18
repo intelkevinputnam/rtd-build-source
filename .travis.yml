@@ -21,9 +21,7 @@ deploy:
  - provider: pages
    skip_cleanup: true
    github_token: $GITHUB_TOKEN
-   keep_history: true
-   repo: intelkevinputnam/rtd-build-target
-   target-branch: master
+   target-branch: latestHTML
    on:
      branch: rtd-theme
    local_dir: source/_build/html/
@@ -38,7 +36,7 @@ deploy:
    github_token: $GITHUB_TOKEN
    keep_history: true
    repo: intelkevinputnam/rtd-build-target
-   target-branch: $TRAVIS_TAG
+   target-branch: LTSv1
    on:
      tags: true
    local_dir: source/_build/html/ 
