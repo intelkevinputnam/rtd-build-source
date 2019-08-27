@@ -19,6 +19,12 @@ before_deploy:
   - tar -zcvf clearlinux-docs-zh-CN.tar.gz -C source/_build/html_zh_CN .
 
 deploy:
+  - provider: releases
+    skip_cleanup: true
+    api_key: $GITHUB_TOKEN
+    file: clearlinux-docs-zh-CN.tar.gz
+    on:
+      tags: true
   - provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
@@ -26,9 +32,4 @@ deploy:
     on:
       branch: master
     local_dir: source/_build/html/
-  - provider: releases
-    skip_cleanup: true
-    api_key: $GITHUB_TOKEN
-    file: clearlinux-docs-zh-CN.tar.gz
-    on:
-      tags: true
+
