@@ -13,7 +13,7 @@ script:
   - make py
   - make htmlall
   - wget https://github.com/intelkevinputnam/rtd-build-source/releases/latest/download/clearlinux-docs.tar.gz
-  - tar xf clearlinux-docs-zh-CN.tar.gz -C source/_build/html/zh_CN
+  - tar xf clearlinux-docs.tar.gz -C source/_build/html/zh_CN
 
 before_deploy:
   - tar -zcvf clearlinux-docs-zh-CN.tar.gz -C source/_build/html_zh_CN .
