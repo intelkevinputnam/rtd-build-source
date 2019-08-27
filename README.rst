@@ -1,8 +1,6 @@
 Documentation build instructions
 ################################
 
-.. todo add comment re not using standards here.
-
 `Clear Linux\* OS documentation`_ is written using `reStructuredText`_ and
 built using `Sphinx`_. Follow the instructions in this README to build the
 documentation locally for development and testing.
